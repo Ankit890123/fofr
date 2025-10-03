@@ -1,10 +1,11 @@
 import { whatsappLink, SITE } from "@/lib/site";
 
 export default function WhatsAppFAB() {
-  const href = whatsappLink(`Hi Foldfresh, I want to place a laundry order.`);
+
   const href = whatsappLink(`Hi ${SITE.name}, I want to place a laundry order.`);
   return (
     <a
+
       href={href}
       target="_blank"
       rel="noreferrer"
