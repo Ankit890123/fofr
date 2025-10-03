@@ -13,7 +13,7 @@ botocore==1.35.95
 branca==0.8.1
 celery==5.3.4
 certifi==2024.12.14
-cffi==2.0.0
+cffi>=1.16.0
 charset-normalizer==3.4.1
 click==8.1.8
 click-didyoumean==0.3.1
@@ -66,7 +66,6 @@ MarkupSafe==3.0.2
 multidict==6.6.4
 mysql-connector-python==9.4.0
 mysqlclient==2.2.7
-npm==0.1.1
 numpy==2.2.3
 oauthlib==3.3.1
 optional-django==0.3.0
@@ -93,11 +92,9 @@ python-dateutil==2.9.0.post0
 python-decouple==3.8
 python-dotenv==0.21.0
 python3-openid==3.2.0
-pytz==2025.2
-pywin32==308
+pytz>=2025.2,<2026.0
 PyYAML==6.0.2
 razorpay==1.4.2
-react==4.3.0
 redis==5.0.1
 referencing==0.36.2
 reportlab==4.4.4
@@ -105,9 +102,9 @@ requests==2.32.3
 requests-oauthlib==2.0.0
 rpds-py==0.27.1
 s3transfer==0.10.4
-setuptools==80.9.0
+setuptools>=80.9.0
 six==1.17.0
-social-auth-app-django==5.5.1
+social-auth-app-django==5.4.1
 social-auth-core==4.7.0
 SQLAlchemy==2.0.43
 sqlparse==0.5.3
@@ -125,7 +122,3 @@ wheel==0.45.1
 whitenoise==6.6.0
 xyzservices==2025.1.0
 yarl==1.20.1
-
-
-
-
