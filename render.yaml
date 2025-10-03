@@ -5,7 +5,7 @@ services:
     buildCommand: |
       pip install -r requirements.txt
       cd frontend && npm install && npm run build
-    startCommand: gunicorn foldfresh_django.wsgi:application
+      startCommand: PYTHONPATH=$PWD/Backend gunicorn foldfresh_django.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: foldfresh_django.settings
