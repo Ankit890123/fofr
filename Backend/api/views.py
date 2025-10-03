@@ -109,7 +109,11 @@ def pricing(request):
 @permission_classes([permissions.AllowAny])
 def site_info(request):
     data = {
+<<<<<<< HEAD
         "name": getattr(settings, "COMPANY_NAME", "Foldfresh"),
+=======
+        "name": "Foldfresh",
+>>>>>>> 9fc5ddd5f153a21f531f55ae2404d661d24e4e6e
         "tagline": "Premium Laundry & Dry Cleaning",
         "whatsappNumber": getattr(settings, "WHATSAPP_NUMBER", ""),
         "phoneDisplay": getattr(settings, "PHONE_DISPLAY", ""),

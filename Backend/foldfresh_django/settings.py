@@ -60,10 +60,18 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'foldfresh_django.urls'
 
+<<<<<<< HEAD
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
+=======
+# Serve React build
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / "frontend" / "build"],  # React build templates
+>>>>>>> 9fc5ddd5f153a21f531f55ae2404d661d24e4e6e
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,8 +87,11 @@ WSGI_APPLICATION = 'foldfresh_django.wsgi.application'
 
 
 # Database
+<<<<<<< HEAD
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+=======
+>>>>>>> 9fc5ddd5f153a21f531f55ae2404d661d24e4e6e
 DATABASE_URL = os.environ.get('DATABASE_URL')
 if DATABASE_URL:
     DATABASES = {
@@ -96,6 +107,7 @@ else:
 
 
 # Password validation
+<<<<<<< HEAD
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -111,10 +123,18 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+=======
+AUTH_PASSWORD_VALIDATORS = [
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},
+>>>>>>> 9fc5ddd5f153a21f531f55ae2404d661d24e4e6e
 ]
 
 
 # Internationalization
+<<<<<<< HEAD
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
@@ -123,10 +143,16 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+=======
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+USE_I18N = True
+>>>>>>> 9fc5ddd5f153a21f531f55ae2404d661d24e4e6e
 USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
+<<<<<<< HEAD
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
@@ -152,6 +178,27 @@ CORS_ALLOW_HEADERS = [
     'user-agent',
     'x-csrftoken',
     'x-requested-with',
+=======
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+    BASE_DIR / "frontend" / "build" / "static",  # React static files
+]
+
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# CORS/CSRF
+_cors = os.environ.get('CORS_ALLOWED_ORIGINS', '')
+CORS_ALLOWED_ORIGINS = [o.strip() for o in _cors.split(',') if o.strip()]
+CORS_ALLOW_ALL_ORIGINS = not bool(CORS_ALLOWED_ORIGINS)
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = [
+    'accept', 'accept-encoding', 'authorization', 'content-type',
+    'dnt', 'origin', 'user-agent', 'x-csrftoken', 'x-requested-with',
+>>>>>>> 9fc5ddd5f153a21f531f55ae2404d661d24e4e6e
 ]
 
 _csrf_trusted = os.environ.get('CSRF_TRUSTED_ORIGINS', '')
@@ -166,14 +213,23 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = os.environ.get('SECURE_HSTS_INCLUDE_SUBDOMAINS'
 SECURE_HSTS_PRELOAD = os.environ.get('SECURE_HSTS_PRELOAD', 'False').lower() in ('1','true','yes')
 SECURE_REFERRER_POLICY = os.environ.get('SECURE_REFERRER_POLICY', 'same-origin')
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9fc5ddd5f153a21f531f55ae2404d661d24e4e6e
 # Business config
 WHATSAPP_NUMBER = os.environ.get("WHATSAPP_NUMBER", "919999999999")
 PHONE_DISPLAY = os.environ.get("PHONE_DISPLAY", "+91 98765 43210")
 PHONE_NUMBER = os.environ.get("PHONE_NUMBER", "919876543210")
 INSTAGRAM_HANDLE = os.environ.get("INSTAGRAM_HANDLE", "")
+<<<<<<< HEAD
 COMPANY_NAME = os.environ.get("COMPANY_NAME", "Foldfresh")
 
 # Email settings (configure via env for production)
+=======
+
+# Email settings
+>>>>>>> 9fc5ddd5f153a21f531f55ae2404d661d24e4e6e
 EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND", "django.core.mail.backends.console.EmailBackend")
 EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
 EMAIL_PORT = int(os.environ.get("EMAIL_PORT", 587))
@@ -186,7 +242,11 @@ CONTACT_NOTIFY_EMAIL = os.environ.get("CONTACT_NOTIFY_EMAIL", EMAIL_HOST_USER or
 WHATSAPP_VERIFY_TOKEN = os.environ.get("WHATSAPP_VERIFY_TOKEN")
 
 # DRF throttling
+<<<<<<< HEAD
 from rest_framework.throttling import AnonRateThrottle, UserRateThrottle  # type: ignore
+=======
+from rest_framework.throttling import AnonRateThrottle, UserRateThrottle
+>>>>>>> 9fc5ddd5f153a21f531f55ae2404d661d24e4e6e
 
 REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_CLASSES': [
